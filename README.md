@@ -33,5 +33,68 @@ y mantener lo que para mi parecia util.
 
 ## 3-. Análisis descriptivo y estadístico.
 
-Con los datos ya limpios
+Con los datos ya limpios pase a analizarlos. En principio iba a calcular:
+  1-. El numero de anuncios activos para ver cuantos alojamientos ofrece Airbnb en Madrid.
+  2-. El precio mediano de los anuncios, porque el promedio se iba a ver influido por los outliers.
+  3-. La tasa ded ocupacion calculada como porcentaje de dias disponibles/no disponibles.
+  4-. Los ingresos mensuales haciendo una aproximacion utilizando precio y disponibilidad.
+Al final decidi hacer esto en el dashboard de PowerBi, no se si de forma acertada o no, pero de esa forma lo utilice para los KPI´s.
+Saque algunas gráficas con matplotlib y seaborn para visualizar:
+  1-. La distribucion de precios, que resulto ser muy sesgada.
+  2-. El numero de reseñas por mes(para ver la evolucion en el tiempo).
+  3-. Comparaciones entre barrios.
+
+## 4-. Dashboard en PowerBi
+
+Despues de tener los datos limpios, exporte los archivos y los cargue en powerBi.Mi objetivo era crear un dashboard visual y
+facil de entender.
+
+Los pasos principales fueron:
+--> KPI´s en la parte superior, que fueron:
+  1-. Amuncios activos.
+  2-. Precio mediano.
+  3-. Ocupacion media.
+  4-. Ingresos mensuales estimados.
+  En este punto me costo dar formato a las tarjetas, pero al final logre que se vieran grandes y claras.
+
+--> Grafico de barras de ocupacion por barrio:
+  1-. Puse los barrios en el eje X y la ocupacion media en el eje Y.
+  2-. Al principio me salia la suma de porcentajes, tuve que cambiarlo a promedio.
+
+--> Distribucion de precios por zona:
+  Aqui se podian ver algunos ouliers.
+
+--> Incluimos un mapa de precios por barrio con su geolocalizacion:
+  De esta forma no solo se diferenciaba por barrio,sino que tambien aparecian los lugares con sus precios.
+
+--> Ocupacion mensual a lo largo del tiempo:
+  De esta forma podemos ver la tendencia que hay a lo largo del tiempo.
+  Aqui me aparecian los valores temporales desordenados, tuve que modificarlo para que saliesen ordenados temporalmente.
+
+--> Precio medio por superhost(1)/host(0)/Desconocido(-1)
+  Mediante este grafico de barras podemos ver si influia el precio de se superhost y se comparaba a los demas.
+
+  --> Segmentadores:
+  Añadi segmentadores por tipo de habitacion, por fecha y por barrio.
+  Al principio quedaban mal con scroll, pero luego pude ajustarlos bien y probe con listas desplegables para que se viera mas
+  limpio.
+
+  ## 5-. Conclusiones.
+  1-. La mayoria de anuncios de Madrid estan concentrados en barrios mas turisticos.
+  2-. Los precios son muy variables, con algunos valores extremos que no parecen realistas. Siendo la zona centro la mas cara de 
+      promedio.
+  3-. La ocupacion mensual da una idea de la demanda, aunque son datos aproximados.Nos muestra que hubo una bajada abrupta pero
+      poco a poco se va recuperando.
+
+
+  ### Opinion personal.
+  Al ser mi primer proyecto de 0, he aprendido mucho:
+    1-. Como limpiar datos en Python con pandas.
+    2-. La importancia de revisar valores nulos, tipos de datos y outliers.
+    3-. Lo dificil que es tomar decisiones cuando no sabes si algo hay que borrarlo o conservarlo.
+    4-. Como hacer un dashboard en PowerBi y los problemas tipicos de diseño(segmentadores, formatos,etc...).
+  Se que mi analisis no es perfecto y he necesitado de mucha ayuda para poder hacer y montar todo,ademas de que se podrian utilizar 
+  otro tipo de herramientas mas avanzadas para hacer un analisis mas eficiente, pero para ser la primera vez estoy contento porque 
+  he podido seguir un orden mas o menos coherente,de los datos en crudo a un dashboard final,aprendiendo mucho en el proceso y 
+  poco a poco enter el como y el porque de hacer ciertas cosas.
 
